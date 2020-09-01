@@ -22,7 +22,12 @@ function writtenPin(button_name) {
 }
 let tryCounter = 3;
 document.getElementById('submit-button').addEventListener('click', function () {
-  if (checkExpression.value == generateExpression.value) {
+  if(generateExpression.value==''){
+    alert("Click 'Generate Pin' first.");
+    document.getElementById('correct').style.display = 'none';
+    document.getElementById('incorrect').style.display = 'none';
+  }
+  else if (checkExpression.value == generateExpression.value) {
     document.getElementById('correct').style.display = 'block';
     document.getElementById('incorrect').style.display = 'none';
   }
